@@ -1,7 +1,7 @@
 ﻿//Author: David Runowski
 //Date: 02/06/2020
 using System;
-using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;//import to use REGEX
 
 namespace MethodCode
 {
@@ -13,8 +13,8 @@ namespace MethodCode
             {
                 Console.WriteLine("Please Enter Your Name:"); //ask user for input
                 string userName = Console.ReadLine();//assign variable to users input
-                bool ans = Regex.IsMatch(userName, @"^[a-zA-Z]+$");
-                if (ans)
+                bool ans = Regex.IsMatch(userName, @"^[a-zA-Z]+$"); //Check to see if user input only contains letters, if it does assign ture to ans
+                if (ans)//check if ans is true
                 {
                     displayName(userName); //call method with userName
                 }
