@@ -1,6 +1,7 @@
 ﻿//Author: David Runowski
 //Date: 02/06/2020
 using System;
+using System.Text.RegularExpressions;
 
 namespace MethodCode
 {
@@ -12,7 +13,15 @@ namespace MethodCode
             {
                 Console.WriteLine("Please Enter Your Name:"); //ask user for input
                 string userName = Console.ReadLine();//assign variable to users input
-                displayName(userName); //call method with userName
+                bool ans = Regex.IsMatch(userName, @"^[a-zA-Z]+$");
+                if (ans)
+                {
+                    displayName(userName); //call method with userName
+                }
+                else
+                {
+                    Console.WriteLine("***ERROR: Please Use Only Letters***");
+                }
 
             }
             catch
